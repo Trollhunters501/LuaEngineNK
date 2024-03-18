@@ -6,7 +6,7 @@ script.registerScript({
     website: "https://github.com/Trollhunters501/LuaEngineNK/",
     author: "Creadores Program"
 });
-var RubyEngineNK = Class(Object, {
+var LuaEngineNK = Class(Object, {
     build: function(){
         let libs = new NnClassLoader({ jars: [ manager.getPlugin("LuaLib").getClass().getProtectionDomain().getCodeSource().getLocation().getPath() ] });
         let LuaFactor = libs.type("org.luaj.vm2.script.LuaScriptEngineFactory");
