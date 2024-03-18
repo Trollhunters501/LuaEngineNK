@@ -9,7 +9,7 @@ script.registerScript({
 var RubyEngineNK = Class(Object, {
     build: function(){
         let libs = new NnClassLoader({ jars: [ manager.getPlugin("LuaLib").getClass().getProtectionDomain().getCodeSource().getLocation().getPath() ] });
-        let LuaFactor = libs.type("org.jruby.embed.jsr223.JRubyEngineFactory");
+        let LuaFactor = libs.type("org.luaj.vm2.script.LuaScriptEngineFactory");
         let LuaManager = new LuaFactor();
         let LuaEngine = LuaManager.getScriptEngine();
         LuaEngine.put("getServer", server);
