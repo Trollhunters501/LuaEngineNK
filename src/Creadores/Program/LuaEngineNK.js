@@ -9,9 +9,9 @@ script.registerScript({
 var LuaEngineNK = Class(Object, {
     build: function(){
         let libs = new NnClassLoader({ jars: [ manager.getPlugin("LuaLib").getClass().getProtectionDomain().getCodeSource().getLocation().getPath() ] });
-        let LuaFactor = libs.type("org.luaj.vm2.script.LuaScriptEngineFactory");
+        let LuaFactor = libs.type("org.luaj.vm2.script.LuaScriptEngine");
         let LuaManager = new LuaFactor();
-        let LuaEngine = LuaManager.getScriptEngine();
+        let LuaEngine = LuaManager;
         LuaEngine.put("getServer", server);
         LuaEngine.put("getLogger", console);
         LuaEngine.put("manager", manager);
