@@ -12,6 +12,7 @@ var LuaEngineNK = Class(Object, {
         let LuaFactor = libs.type("javax.script.ScriptEngineManager");
         let LuaManager = new LuaFactor();
         let LuaEngine = LuaManager.getEngineByName("luaj");
+        LuaEngine.eval("print('hi')");
         LuaEngine.put("getServer", server);
         LuaEngine.put("getLogger", console);
         LuaEngine.put("manager", manager);
