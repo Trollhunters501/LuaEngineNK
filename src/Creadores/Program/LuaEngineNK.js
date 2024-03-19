@@ -11,8 +11,7 @@ var LuaEngineNK = Class(Object, {
         let libs = new NnClassLoader({ jars: [ manager.getPlugin("LuaLib").getClass().getProtectionDomain().getCodeSource().getLocation().getPath() ] });
         let LuaFactor = libs.type("javax.script.ScriptEngineManager");
         let LuaManager = new LuaFactor();
-        let LuaEngine = LuaManager.getEngineByName("luaj");
-        LuaEngine.eval("print('hi')");
+        let LuaEngine = LuaManager.getEngine();
         LuaEngine.put("getServer", server);
         LuaEngine.put("getLogger", console);
         LuaEngine.put("manager", manager);
