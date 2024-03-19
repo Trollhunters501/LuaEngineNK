@@ -40,7 +40,7 @@ manager return manager by JSEngineNK
 plugin return main Class by JSEngineNK
 # Specify Variables (put):
 ```js
-TestLua.put("localVariable", objectJava);
+TestLua.put("Variable", objectJava);
 //also applies to setNnClassLoader!
 ```
 # setNnClassLoader: 
