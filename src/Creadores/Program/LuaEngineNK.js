@@ -8,10 +8,10 @@ script.registerScript({
 });
 var LuaEngineNK = Class(Object, {
     build: function(){
-        let libs = new NnClassLoader({ jars: [ manager.getPlugin("LuaLib").getClass().getProtectionDomain().getCodeSource().getLocation().getPath() ] });
-        let LuaFactor = libs.type("javax.script.ScriptEngineManager");
+        let libs = new NnClassLoader({ jars: [ manager.getPlugin("LuaLib").getClass().getProtectionDomain().getCodeSource().getLocation().getPath() ], urls: ["https://github.com/luaj/luaj/releases/download/v3.0.2/luaj-jse-3.0.2.jar"] });
+        let LuaFactor = libs.type("org.luaj.vm2.script.LuaScriptEngineFactory");
         let LuaManager = new LuaFactor();
-        let LuaEngine = LuaManager.getEngine();
+        let LuaEngine = LuaManager.getScriptEngine();
         LuaEngine.put("getServer", server);
         LuaEngine.put("getLogger", console);
         LuaEngine.put("manager", manager);
