@@ -18,7 +18,7 @@ Easily installed with a JSEngineNK script:
 
 ```js
 if(!script.getScriptByName("LuaEngineNK")){
-   load("https://raw.githubusercontent.com/Trollhunters501/LuaEngineNK/main/src/Creadores/Program/LuaEngineNK.js");
+   load("https://cdn.jsdelivr.net/gh/Trollhunters501/LuaEngineNK/src/Creadores/Program/LuaEngineNK.js");
 }
 ```
 # Engine Creation: 
