@@ -17,7 +17,7 @@ Know Basic JavaScript
 Easily installed with a JSEngineNK script:
 
 ```js
-const LuaSc = require("LuaEngineNK/org/CreadoresProgram/LuaEngineNK");
+const LuaSc = require("LuaEngineNK/org/CreadoresProgram/LuaEngineNK.js");
 ```
 # Engine Creation: 
 Just add this code to your script and you can use Lua!
