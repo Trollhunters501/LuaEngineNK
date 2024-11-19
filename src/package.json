@@ -1,0 +1,8 @@
+{
+    "name": "LuaEngineNK",
+    "description": "Run Lua on Nukkit!",
+    "author": "Creadores Program",
+    "main": "org/CreadoresProgram/LuaEngineNK.js",
+    "version": "1.1.0",
+    "homepage": "https://github.com/Trollhunters501/LuaEngineNK/"
+}

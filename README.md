@@ -9,7 +9,7 @@ Requirements:
 
 JSEngineNK Plugin: https://cloudburstmc.org/resources/jsenginenk.939/
 
-LuaLib Plugin: https://github.com/Trollhunters501/LuaLib
+JSENK2: https://cloudburstmc.org/resources/jsenk2.1017/
 
 Know Basic JavaScript
 
@@ -17,14 +17,12 @@ Know Basic JavaScript
 Easily installed with a JSEngineNK script:
 
 ```js
-if(!script.getScriptByName("LuaEngineNK")){
-   load("https://cdn.jsdelivr.net/gh/Trollhunters501/LuaEngineNK/src/Creadores/Program/LuaEngineNK.js");
-}
+const LuaSc = require("LuaEngineNK/org/CreadoresProgram/LuaEngineNK");
 ```
 # Engine Creation: 
 Just add this code to your script and you can use Lua!
 ```js
-var TestLua = new LuaEngineNK().build();
+var TestLua = new LuaSc.LuaEngineNK().build();
 ```
 # Eval:
 ```js

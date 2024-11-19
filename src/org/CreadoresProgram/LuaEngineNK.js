@@ -1,14 +1,7 @@
-if(manager.getPlugin("LuaLib") != null){
-script.registerScript({
-    name: "LuaEngineNK",
-    version: "1.0",
-    description: "Run Lua on Nukkit!",
-    website: "https://github.com/Trollhunters501/LuaEngineNK/",
-    author: "Creadores Program"
-});
-var LuaEngineNK = Class(Object, {
+const prefix = "[LuaEngineNK] ";
+const LuaEngineNK = Class(Object, {
     build: function(){
-        let libs = new NnClassLoader({ jars: [ manager.getPlugin("LuaLib").getClass().getProtectionDomain().getCodeSource().getLocation().getPath() ], urls: ["https://github.com/luaj/luaj/releases/download/v3.0.2/luaj-jse-3.0.2.jar"] });
+        let libs = new NnClassLoader({ urls: ["https://github.com/luaj/luaj/releases/download/v3.0.2/luaj-jse-3.0.2.jar"] });
         let LuaFactor = libs.type("org.luaj.vm2.script.LuaScriptEngineFactory");
         let LuaManager = new LuaFactor();
         let LuaEngine = LuaManager.getScriptEngine();
@@ -22,9 +15,9 @@ var LuaEngineNK = Class(Object, {
             },
             eval: function(arg1, arg2){
                 if(arg2 == null){
-                LuaEngine.eval(arg1);
+                  LuaEngine.eval(arg1);
                 }else{
-                    LuaEngine.eval(arg1, arg2);
+                  LuaEngine.eval(arg1, arg2);
                 }
             },
             getEngineName: function(){
@@ -47,7 +40,7 @@ var LuaEngineNK = Class(Object, {
                 return LuaEngine;
             },
             getClass: function(){
-                return this;
+                return LuaEngineNK;
             },
             getEngineClass: function(){
                 return LuaFactor;
@@ -69,7 +62,7 @@ var LuaEngineNK = Class(Object, {
         return subclass;
     },
     getClass: function(){
-      return this;
+      return LuaEngineNK;
     },
     constructor: function(){
       return this.build();
@@ -81,7 +74,18 @@ var LuaEngineNK = Class(Object, {
       return "LuaEngineNK[]";
     }
 });
-}else{
-    console.critical("LuaLib Plugin not found! Download at https://github.com/Trollhunters501/LuaLib/releases/tag/3.0.2");
-    throw "Error Plugin LuaLib Not Found";
+function enable(){
+  console.info(prefix+"§aDone");
+}
+function load(){
+  console.info(prefix+"§eLoading...");
+}
+function disable(){
+  console.info(prefix+"§cBye");
+}
+module.exports = {
+  LuaEngineNK: LuaEngineNK,
+  onEnable: enable,
+  onLoad: load,
+  onDisable: disable
 }
